@@ -1,0 +1,14 @@
+/* DB作成 */
+CREATE DATABASE hogehogego DEFAULT CHARACTER SET utf8;
+
+/* 接続テーブル作成 */
+CREATE TABLE connect_table (
+    id INT NOT NULL UNIQUE AUTO_INCREMENT,
+	termid CHAR(16) NOT NULL,
+	status INT NOT NULL,
+	uptime DATETIME NOT NULL,
+	PRIMARY KEY (id)
+);
+CREATE INDEX connect_termid ON connect_table (termid ASC);
+CREATE INDEX connect_status ON connect_table (status ASC);
+CREATE INDEX connect_uptime ON connect_table (uptime ASC);
